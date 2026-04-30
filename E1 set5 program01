@@ -1,0 +1,32 @@
+//1. db.animals.insertOne({
+  "animal_id": 101,
+  "name": "Buddy",
+  "species": "Dog",
+  "breed": "Golden Retriever",
+  "age_months": 24,
+  "vaccinated": true,
+  "health_status": "Healthy",
+  "adoption_fee": 150,
+  "adoption_status": "Available"
+});
+//2. db.animals.insertMany(
+{ "animal_id": 102, "name": "Luna", "species": "Cat", "breed": "Siamese", "age_months": 12, "vaccinated": true, "health_status": "Healthy", "adoption_fee": 100, "adoption_status": "Available" },
+{ "animal_id": 103, "name": "Thumper", "species": "Rabbit", "breed": "Holland Lop", "age_months": 8, "vaccinated": false, "health_status": "Minor Injury", "adoption_fee": 50, "adoption_status": "Pending" },
+{ "animal_id": 104, "name": "Max", "species": "Dog", "breed": "Beagle", "age_months": 36, "vaccinated": true, "health_status": "Healthy", "adoption_fee": 120, "adoption_status": "Adopted" },
+{ "animal_id": 105, "name": "Misty", "species": "Cat", "breed": "Persian", "age_months": 18, "vaccinated": true, "health_status": "Healthy", "adoption_fee": 200, "adoption_status": "Available" },
+{ "animal_id": 106, "name": "Rex", "species": "Dog", "breed": "German Shepherd", "age_months": 48, "vaccinated": true, "health_status": "Healthy", "adoption_fee": 180, "adoption_status": "Available" }
+]);
+ 
+//3. db.animals.find({
+  "adoption_status": "Available",
+  "vaccinated": true
+});
+//4. db.animals.find(
+  {}, 
+  { "name": 1, "species": 1, "adoption_fee": 1, "_id": 0 }
+);
+
+//5. db.animals.deleteOne({
+  "animal_id": 104,
+  "adoption_status": "Adopted"
+});
