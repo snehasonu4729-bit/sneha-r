@@ -1,0 +1,81 @@
+//1. db.cars.insertMany([
+  {
+    "car_id": 1,
+    "model": "Civic",
+    "brand": "Honda",
+    "year": 2022,
+    "fuel_type": "Petrol",
+    "seating_capacity": 5,
+    "rental_price_per_day": 1500,
+    "location": "Mumbai",
+    "availability_status": "Available",
+    "features": ["AC", "GPS", "Bluetooth"]
+  },
+  {
+    "car_id": 2,
+    "model": "Model 3",
+    "brand": "Tesla",
+    "year": 2023,
+    "fuel_type": "Electric",
+    "seating_capacity": 5,
+    "rental_price_per_day": 5000,
+    "location": "Bangalore",
+    "availability_status": "Available",
+    "features": ["Autopilot", "GPS", "Bluetooth"]
+  },
+  {
+    "car_id": 3,
+    "model": "Innova",
+    "brand": "Toyota",
+    "year": 2014,
+    "fuel_type": "Diesel",
+    "seating_capacity": 7,
+    "rental_price_per_day": 2500,
+    "location": "Delhi",
+    "availability_status": "Maintenance",
+    "features": ["AC", "Carrier"]
+  },
+  {
+    "car_id": 4,
+    "model": "Tiago EV",
+    "brand": "Tata",
+    "year": 2022,
+    "fuel_type": "Electric",
+    "seating_capacity": 5,
+    "rental_price_per_day": 1800,
+    "location": "Pune",
+    "availability_status": "Available",
+    "features": ["AC", "Bluetooth"]
+  },
+  {
+    "car_id": 5,
+    "model": "Swift",
+    "brand": "Maruti",
+    "year": 2018,
+    "fuel_type": "Petrol",
+    "seating_capacity": 5,
+    "rental_price_per_day": 1200,
+    "location": "Chennai",
+    "availability_status": "Available",
+    "features": ["AC", "GPS"]
+  }
+]);
+
+//2. db.cars.find({
+  "rental_price_per_day": { "$lt": 2000 },
+  "availability_status": "Available"
+});
+
+//3. db.cars.updateMany(
+  { "fuel_type": "Electric" },
+  { "$inc": { "rental_price_per_day": 300 } }
+);
+
+//4. db.cars.deleteMany({
+  "year": { "$lt": 2015 },
+  "availability_status": "Maintenance"
+});
+
+//5. db.cars.find({
+  "features": "GPS"
+});
